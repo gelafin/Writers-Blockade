@@ -8,5 +8,5 @@ Choose one of these popular writing genres!
 
 Do your best to meet the prompt... but watch out for some __required conditions__~
 
-##Coming Soon
+## Coming Soon
 *Competitive Team Play
