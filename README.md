@@ -1,4 +1,4 @@
-# Writers-Blockade
+# Writers-Blockade (wip)
 Epic All-New Simple C++ Word Game, Exclusively for the Terminal
 
 Choose one of these popular writing genres!
