@@ -13,24 +13,31 @@ private:
   Genre genre{POETRY};
   int length{1};
   std::string body{""};
+
 public:
   Composition(){
   }
+
   void setGenre(Genre selection){
     this->genre = selection;
   }
+
   void setLength(int selection){
     this->length = selection;
   }
+
   void addToBody(std::string appendage){
     this->body = body.append(appendage);
   }
+
   Genre getGenre(){
     return this->genre;
   }
+
   std::string getBody(){
     return this->body;
   }
+
   std::string unitsAsString(Genre genre){
     if (genre == POETRY)
       return "lines";
@@ -41,6 +48,7 @@ public:
       return "?";
     }
   }
+
   bool lengthIsValid(int selection){
     const int maxPoemLines{100};
     const int maxFictionSentences{100};
@@ -66,25 +74,31 @@ public:
   }
 };
 
+
 class GameManager{
 private:
   int numberOfPlayers{1};
   int activePlayer{1};
   int gameTurn{1};
+
 public:
   GameManager(){
   }
+
   int getGameTurn(){
     return this->gameTurn;
   }
+
   void incrementGameTurn(){
     this->gameTurn++;
   }
+
   void printWelcome(){
     std::cout << "\t~~~~~~~~~~~~~~~*  *~~~~~~~~~~~~~~~" << std::endl;
     std::cout << "\t\t" << "WRITERS' BLOCKADE" << std::endl;
     std::cout << "\t~~~~~~~~~~~~~~~*  *~~~~~~~~~~~~~~~" << std::endl;
   }
+
   void confirmPlayers(){
     int selection;
     std::cout << "Players: ";
@@ -93,6 +107,7 @@ public:
     this->numberOfPlayers = selection;
     std::cout << numberOfPlayers << " player mode" << std::endl;
   }
+
   void confirmGenre(Composition &comp){
     char selection{'x'};
     while ((selection != 'p') && (selection != 'f') && (selection != 'e')){
@@ -115,6 +130,7 @@ public:
         }
     }
   }
+
   void confirmLength(Composition &comp){
     int selection{2};
     while (true){
@@ -130,9 +146,11 @@ public:
       }
     }
   }
+
   void announcePlayer(){
     std::cout << "Player " << this->activePlayer << std::endl;
   }
+  
   void playTurn(Composition &comp){
     std::cout << "Write something. (this is where the fun conditions go)" << std::endl;
     if (this->getGameTurn() > 1)
